@@ -1,0 +1,21 @@
+﻿{% extends "index.html" %}
+{% block title %} <p>{{name}}'s Board </p>  {% endblock %}
+{% block body %}
+<form action="#" method="POST">
+    <div class="form-group">
+        <label for="comment">What do you want post?</label>
+        <p><input type="text" id="new_post" name="new_post" /></p>
+        <p><input type="submit" value="submit" /></p>
+    </div>
+</form>
+    {% set k = tabb.posts %}
+    {% for j in k %}
+    <div class="media border p-3">
+        <img src="./static/user_photo/{{name}}.jpg" class="mr-3 mt-3 rounded-circle" style="width:60px" />
+        <div class="media-body">
+            <h4>{{name}} <small><i>{{j.date}}</i></small></h4>
+            <p>{{j.posttext}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

@@ -1,0 +1,16 @@
+﻿{% extends "index.html" %}
+{% block title %} <p>User</p>  {% endblock %}
+{% block body %}
+
+{% set k = tabb2.posts %}
+{% for j in k %}
+<div class="media border p-3">
+    <img src="./static/user_photo/{{name}}.jpg" class="mr-3 mt-3 rounded-circle" style="width:60px" />
+    <div class="media-body">
+        <h4>{{name}} <small><i>{{j.date}}</i></small></h4>
+        <p>{{j.posttext}}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+{% endblock %}
